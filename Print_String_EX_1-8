@@ -1,0 +1,99 @@
+EX_1:
+package main
+import ("fmt")
+
+func main() {
+
+  name:= "Jana"
+	fmt.Println(name)
+}
+
+//go run main.go -> Jana
+
+EX_2:
+package main
+import "fmt"
+func main() {
+
+	fmt.Print("Hey, Jana")
+}
+
+//go run main.go -> Hey, Jana
+
+EX_3:
+package main
+import "fmt"
+
+func main() {
+     var city string = "Vilnius"
+     fmt.Print(city)
+}
+
+//go run main.go -> Vilnius
+
+EX_4: Print var and string
+package main
+import "fmt"
+
+func main() {
+     var name string = "KodeKloud"
+     var user string = "Jana"
+     fmt.Print("Welcome to ", name, ", ",user)
+}
+
+//go run main.go -> Welcome to KodeKloud, Jana
+
+EX_5: Print var and string
+package main
+import "fmt"
+
+func main() {
+     var name string = "KodeKloud"
+     var user string = "Jana"
+     fmt.Print(name)
+     fmt.Print(user)
+}
+
+//go run main.go -> KodeKloudJana
+
+EX_6: Print var and string
+package main
+import ("fmt")
+
+func main() {
+     var name string = "KodeKloud"
+     var user string = "Jana"
+     fmt.Print(name, "\n")
+     fmt.Print(user)
+}
+
+//go run main.go -> 
+KodeKloud
+Jana
+
+EX_7: Print var and string
+package main
+import ("fmt")
+
+func main() {
+     var name string = "KodeKloud"
+     var user string = "Jana"
+     fmt.Println(name)
+     fmt.Println(user)
+}
+
+//go run main.go -> 
+KodeKloud
+Jana
+
+EX_8: Printf
+package main
+import ("fmt")
+
+func main() {
+     var name string = "Max"
+     var i int = 76
+     fmt.Printf("Hey, @v! You have scored @d/100 in Physics", name, i)
+}
+
+//go run main.go -> Hey, Max! You have scored 76/100 in Physics
