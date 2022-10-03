@@ -1,0 +1,11 @@
+package main
+import ("fmt")
+
+func main() {
+
+  var greeting string = "Hey, Jana"
+	fmt.Println(greeting)
+}
+
+//go run main.go -> Hey, Jana
+//Syntax: var + <variable name> + <data type> = <value>
