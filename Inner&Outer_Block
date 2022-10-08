@@ -1,0 +1,18 @@
+#Inner blocks can access variables declared within outer blocks.
+#Outer blocks cannot access variables declared within inner blocks.
+
+func main() {
+city := "London"
+{
+       country := "UK"
+       fmt.Println(country)
+       fmt.Println(city)
+}
+
+fmt.Println(city)
+}
+
+#go run main.go
+UK
+London
+London
