@@ -1,0 +1,23 @@
+Ex_1
+package main
+import "fmt"
+
+func main() {
+      var i int   #variable was not declared 
+      fmt.Println("%d", i)
+}
+
+#go run main.go
+0 
+
+Ex_2
+package main
+import "fmt"
+
+func main() {
+      var fl float64   #variable was not declared 
+      fmt.Println("%.2f", fl)
+}
+
+#go run main.go
+0.00
