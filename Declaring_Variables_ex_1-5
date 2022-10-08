@@ -1,0 +1,71 @@
+Ex_1
+package main
+import ("fmt")
+
+func main() {
+
+  var greeting string = "Hey, Jana"
+	fmt.Println(greeting)
+}
+
+//go run main.go -> Hey, Jana
+//Syntax: var + <variable name> + <data type> = <value>
+
+Ex_2
+package main
+import ("fmt")
+
+func main() {
+  var user string 
+  user = "Jana"
+	fmt.Println(user)
+}
+
+//go run main.go -> Jana
+
+Ex_3
+package main
+import ("fmt")
+
+func main() {
+  var s,t string = "foo", "bar"
+  user = "Jana"
+	fmt.Println(s)
+	fmt.Println(t)
+}
+
+//go run main.go -> 
+foo
+bar
+
+Ex_4
+package main
+import ("fmt")
+
+func main() {
+  var (
+  s string = "foo"
+  i int = 5)
+  user = "Jana"
+	fmt.Println(s)
+	fmt.Println(i)
+}
+
+//go run main.go -> 
+foo
+5
+
+Ex_5
+package main
+import ("fmt")
+
+func main() {
+  
+  name:= "Jana"
+  name = "Peter"
+  fmt.Println(name)
+	
+}
+
+//go run main.go -> 
+Peter
