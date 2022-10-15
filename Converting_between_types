@@ -1,0 +1,69 @@
+#Int_to_float
+package main
+import "fmt"
+func main() {
+  var i int = 90
+  var f float64 = float64(i)
+  fmt.Printf("%.2f\n", f)
+}
+
+#go run main.go
+90.00
+
+#float to integer
+package main
+import "fmt"
+func main() {
+  var f float64 = 45.89
+  var i int = int(f)
+  fmt.Printf("%v\n", i)
+}
+
+#go run main.go
+45
+
+#integer to string
+package main
+import (
+"fmt"
+"strconv")
+func main() {
+  var i int = 42
+  var s string = strconv.Itoa(i) // convert int to string
+  fmt.Printf("%q", s)
+  }
+  
+ #go run main.go
+ "42"
+ 
+#string to integer
+package main
+import (
+"fmt"
+"strconv")
+func main() {
+  var s string = "200"
+  i, err := strconv.Atoi(s) // convert string to integer
+  fmt.Printf("%v, %T \n", i, i)
+  fmt.Printf("%v, %T", err, err)
+  }
+  
+ #go run main.go
+ 200, int
+ <nil>, <nil>
+ 
+#string to integer
+package main
+import (
+"fmt"
+"strconv")
+func main() {
+  var s string = "200abc"
+  i, err := strconv.Atoi(s) // convert string to integer
+  fmt.Printf("%v, %T \n", i, i)
+  fmt.Printf("%v, %T", err, err)
+  }
+  
+ #go run main.go
+ 0, int
+ strconv.Atoi: parsing "200a": invalid syntax, *strconv.NumError
