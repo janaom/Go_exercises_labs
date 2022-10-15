@@ -1,0 +1,38 @@
+const <const name> <data type> = <value>
+
+#untyped constant
+const age = 12
+const h_name, h_age = "She", 12
+
+#typed constant
+const name string = "Harry Potter"
+const age int = 12
+
+package main
+import "fmt"
+func main() {
+     const name = "Harry Potter"
+     const is_muggle = false
+     const age = 12
+     
+     fmt.Printf("%v: %T \n", name, name)
+     fmt.Printf("%v: %T \n", is_muggle, is_muggle)
+     fmt.Printf("%v: %T", age, age)
+ }
+ #go run main.go
+ Harry Potter: string
+ false: bool
+ 12: int
+ 
+ 
+package main
+import "fmt"
+const PI float64 = 3.14 // global constant
+func main () {
+     var radius float64 = 5.0
+     var area float64
+     area = PI * radius * radius
+     fmt.Println("Area of Circle is : ", area)
+     }
+     #go run main.go
+     Area of Circle is : 78.5
