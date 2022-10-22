@@ -1,0 +1,61 @@
+#Equal to (==)
+package main
+import "fmt"
+func main() {
+     var city string = "Vilnius"
+     var city_2 string = "Kaunas"
+     fmt.Println(city == city_2)
+ }
+ #go run main.go
+ false
+ 
+#not equal to (!=)
+package main
+import "fmt"
+func main() {
+     var city string = "Vilnius"
+     var city_2 string = "Kaunas"
+     fmt.Println(city != city_2) #returns True when the values are not equal
+ }
+ #go run main.go
+ true 
+ 
+#less than (<)
+package main
+import "fmt"
+func main() {
+     var a, b int = 5, 10
+     fmt.Println(a < b) #returns True when the left operand is lesser than the right operand
+ }
+ #go run main.go
+ true 
+ 
+#less than or equal to (<=)
+package main
+import "fmt"
+func main() {
+     var a, b int = 10, 10
+     fmt.Println(a <= b) #returns True when the left operand is lesser or equal to the right operand
+ }
+ #go run main.go
+ true 
+ 
+#greater than (>)
+package main
+import "fmt"
+func main() {
+     var a, b int = 20, 10
+     fmt.Println(a > b) #returns True when the left operand is greater to the right operand
+ }
+ #go run main.go
+ true 
+ 
+#greater than or equal to (>=)
+package main
+import "fmt"
+func main() {
+     var a, b int = 20, 20
+     fmt.Println(a >= b) #returns True when the left operand is greater or equal to the right operand
+ }
+ #go run main.go
+ true 
