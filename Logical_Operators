@@ -22,6 +22,17 @@ func main() {
 true
 false
 
+import "fmt"
+
+func main() {
+        var a, b bool = false, false
+        fmt.Println(a && b)
+        fmt.Println(a || b)
+}
+#go run main.go
+false
+false
+
 #NOT (!)
 package main 
 import "fmt"
@@ -35,3 +46,35 @@ func main() {
 true
 false
 true
+
+package main
+import "fmt"
+func main() {
+        var a, b bool = false, true
+        fmt.Println(!a)
+        fmt.Println(b)
+}
+#go run main.go
+true 
+true
+
+package main
+import "fmt"
+func main() {
+        var a bool = false
+        result := 10 > 50
+        fmt.Println(!(a && result))
+}
+#go run main.go
+true
+
+
+package main
+import "fmt"
+func main() {
+        var a bool = true
+        result := 10 > 50
+        fmt.Println(!(a || result))
+}
+#go run main.go
+false
