@@ -1,0 +1,66 @@
+#assign (=)
+package main
+import "fmt"
+func main() {
+     var x int = 10
+     var y int
+     y = x    #assigns left operand with the value to the right
+     fmt.Println(y)
+}
+#go run main.go
+10
+
+#add and assign (+=)
+package main
+import "fmt"
+func main() {
+     var x, y int = 10, 20
+     x += y     #assigns left operand with the addition result x+= y means x = x+y
+     fmt.Println(x)
+}
+#go run main.go
+30
+
+#subtract and assign (-=)
+package main
+import "fmt"
+func main() {
+     var x, y int = 10, 20
+     x -= y     #assigns left operand with the subtraction result x-= y means x = x-y
+     fmt.Println(x)
+}
+#go run main.go
+-10
+
+#multiply and assign (*=)
+package main
+import "fmt"
+func main() {
+     var x, y int = 10, 20
+     x *= y     #assigns left operand with the multiplication result x*= y means x = x*y
+     fmt.Println(x)
+}
+#go run main.go
+200
+
+#divide and assign quotient (/=)
+package main
+import "fmt"
+func main() {
+     var x, y int = 200, 20
+     x /= y     #assigns left operand with the quotient of the division x/= y means x = x/y
+     fmt.Println(x)
+}
+#go run main.go
+10
+
+#divide and assign modulus (%=)
+package main
+import "fmt"
+func main() {
+     var x, y int = 210, 20
+     x %= y     #assigns left operand with the remainder of the division x %= y means x = x%y
+     fmt.Println(x)
+}
+#go run main.go
+10
