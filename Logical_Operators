@@ -1,0 +1,37 @@
+#AND (&&)
+package main 
+import "fmt"
+func main() {
+     var x int = 10
+     fmt.Println((x < 100) && (x < 200)) #return true if both the statements are true
+     fmt.Println((x < 300) && (x < 0))  #returns false when either of the statement is false
+}
+#go run main.go
+true
+false
+
+#OR (||)
+package main 
+import "fmt"
+func main() {
+     var x int = 10
+     fmt.Println((x < 0) || (x < 200)) #return true if one of the statements is true
+     fmt.Println((x < 0) || (x > 200))  #returns false when both statements are false
+}
+#go run main.go
+true
+false
+
+#NOT (!)
+package main 
+import "fmt"
+func main() {
+     var x, y int = 10, 20
+     fmt.Println(!(x > y)) #reverses the result, returns false if the expression evaluates to true and vice versa
+     fmt.Println(!(true))
+     fmt.Println(!(false)) 
+}
+#go run main.go
+true
+false
+true
