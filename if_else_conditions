@@ -1,0 +1,48 @@
+Syntax:
+if condition {
+//executes when condition is true
+} else {
+//executes when condition is false
+}
+
+#if statement
+package main
+import "fmt"
+func main() {
+     var a string = "happy"
+     if a == "happy" {
+        fmt.Println(a)
+     }
+}
+>>>go run main.go
+happy
+
+#if-else statement
+package main
+import "fmt"
+func main() {
+     var fruit string = "grapes"
+     if fruit == "apples" {
+            fmt.Println("Fruit is apple")
+     } else {
+           fmt.Println("Fruit is not apple")
+     }
+}
+>>>go run main.go
+Fruit is not apple
+
+#if-else-if else statement
+package main
+import "fmt"
+func main() {
+     fruit  := "grapes"
+     if fruit == "apple" {
+        fmt.Println("I love apples")
+     } else if fruit == "orange" {
+           fmt.Println("Oranges are not apples")
+     } else {
+           fmt.Println("no appetite")
+     }
+}
+>>>go run main.go
+no appetite
