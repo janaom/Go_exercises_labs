@@ -37,6 +37,18 @@ func main() {
  >>> go tun main.go
  29
  
+package main
+import "fmt"
+func main() {
+        var x, y int = 100,90
+        fmt.Println(x & y)
+        fmt.Println(x | y)
+}
+>>> go tun main.go
+64
+128
+ 
+ 
  #bitwise XOR (^) # takes 2 numbers as operands and does XOR on every bit of 2 numbers
  #the result of XOR is 1 if the 2 bits are opposite
  
@@ -90,3 +102,21 @@ func main() {
  }
  >>> go tun main.go
  53
+
+package main
+import "fmt"
+func main() {
+        var x, y int = 100,90
+        fmt.Println((x+y) >> 2)
+}
+ >>> go tun main.go
+ 47
+ 
+package main
+import "fmt"
+func main() {
+        var x, y int = 100,90
+        fmt.Println(!(((x+y) >> 2 ) == 47))
+}
+ >>> go tun main.go
+ False
