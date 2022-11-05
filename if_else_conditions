@@ -46,3 +46,80 @@ func main() {
 }
 >>>go run main.go
 no appetite
+
+
+package main
+import "fmt"
+func main() {
+        var a, b string = "kolkata", "Kolkata"
+        if a == b {
+                fmt.Println("strings are equal")
+        } else {
+                fmt.Println("strings are not equal")
+        }
+        fmt.Println("thank you!")
+
+}
+>>>go run main.go
+strings are not equal
+thank you!
+
+
+package main
+import "fmt"
+func main() {
+        var a, b string = "kolkata", "kolkata"
+        if a == b {
+                fmt.Println("strings are equal")
+        } 
+        else {
+                fmt.Println("strings are not equal")
+        }
+        fmt.Println("thank you!") #not outside the loop
+
+}
+>>>go run main.go
+Error
+
+
+package main
+import "fmt"
+func main() {
+        var a, b string = "foo", "bar"
+        if a+b == "foo" {
+                fmt.Println("foo")
+        } else if a+b == "bar" {
+                fmt.Println("bar")
+        } else if a+b == "foobar" {
+                fmt.Println("foobar")
+        } else {
+                fmt.Println("None matched")
+        }
+        fmt.Println("thank you!")
+
+}
+>>>go run main.go
+foobar
+thank you!
+
+
+package main
+import "fmt"
+func main() {
+        var a, b string = "foo", "bar"
+        if a+b == "foo" {
+                fmt.Println("foo")
+        } else if a+b == "foobar" {
+                fmt.Println("bar")
+        } else if a+b == "foobar" {
+                fmt.Println("foobar")
+        } else {
+                fmt.Println("None matched")
+        }
+        fmt.Println("thank you!")
+
+}
+>>>go run main.go
+bar
+thank you!
+
