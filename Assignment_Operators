@@ -21,6 +21,16 @@ func main() {
 #go run main.go
 30
 
+package main
+import "fmt"
+func main() {
+        var x, y string = "foo", "bar"
+        x += y
+        fmt.Println(x)
+}
+#go run main.go
+foobar
+
 #subtract and assign (-=)
 package main
 import "fmt"
@@ -31,6 +41,19 @@ func main() {
 }
 #go run main.go
 -10
+
+package main
+import "fmt"
+func main() {
+        var x, y float64 = 27.9, 7.0
+        x -= y
+        fmt.Println(x)
+        x += y
+        fmt.Println(x)
+}
+#go run main.go
+20.9
+27.9
 
 #multiply and assign (*=)
 package main
@@ -54,6 +77,17 @@ func main() {
 #go run main.go
 10
 
+package main
+import "fmt"
+func main() {
+        var x, y int = 27, 7
+        x /= y
+        fmt.Println(x)
+}
+#go run main.go
+3
+
+
 #divide and assign modulus (%=)
 package main
 import "fmt"
@@ -64,3 +98,16 @@ func main() {
 }
 #go run main.go
 10
+
+package main
+import "fmt"
+func main() {
+        var x, y int = 100,9
+        x /= y
+        fmt.Println(x)
+        x %= y
+        fmt.Println(x)
+}
+#go run main.go
+11
+2
