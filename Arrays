@@ -1,0 +1,111 @@
+#An array is a collection of similar data elements stored at contiguous memory locations
+ex. int: 1 2 3 4
+or strings: "Joey" "Chandler" "Ross"
+
+array el:    1    2   3   4   5
+memory add: 200  204 208 212 216 (4 bytes between)
+
+-fixed length
+-elements should be of the same data type
+
+Syntax:
+     var  <array name>  [<size of the array>]  <data type>
+ex:  var    grades               [5]              int
+     var    fruits               [3]             string
+     
+package main
+import "fmt"
+func main() {
+     var grades [5] int
+     fmt.Println(grades)
+}
+>>> go run main.go
+[0 0 0 0 0]   #no initialization
+
+
+package main
+import "fmt"
+func main() {
+     var grades [5] int
+     fmt.Println(grades)
+     var fruits [3] string
+     fmt.Println(fruits)
+}
+>>> go run main.go
+[0 0 0 0 0]
+[   ]     #no initialization
+
+
+#array initialization
+var grades [3]int = [3]int{10, 20, 30}
+or
+grades := [3]int{10, 20, 30}
+or
+grades := [...]int{10, 20, 30} #the length will be calculated based on nr of elements (10,20,30)
+
+
+package main
+import "fmt"
+func main() {
+     var fruits [2]string = [2]string{"apples", "oranges"}
+     fmt.Println(fruits)
+     
+     marks := [3]int{10, 20, 30}
+     fmt.Println(marks)
+     
+     names := [...]string{"Rachel", "Phoebe", "Monica"}
+     fmt.Println(names)
+ }
+ >>> go run main.go
+ [apples oranges]
+ [10 20 30]
+ [Rachel Phoebe Monica]
+ 
+ 
+#len () 
+The length of the array refers to the number of elements stored in the array
+
+package main
+import "fmt"
+func main() {
+     var fruits [2]string = [2]string{"apples", "oranges"}
+     fmt.Println(len(fruits))  #you specify that you wanna see 2 values
+ }
+ >>> go run main.go
+ 2
+ 
+ 
+package main
+import "fmt"
+func main() {
+     var fruits [5]string = [5]string{"apples", "oranges", "grapes", "mango", "papaya"}
+     fmt.Println(fruits[2])  #we count from apples=0, oranges=1, grapes=2 etc
+ }
+ >>> go run main.go
+ grapes 
+ 
+ 
+package main
+import "fmt"
+func main() {
+     var fruits [5]string = [5]string{"apples", "oranges", "grapes", "mango", "papaya"}
+     fmt.Println(fruits[6])  
+ }
+ >>> go run main.go
+ Error
+ 
+ 
+package main
+import "fmt"
+func main() {
+     var grades [5]int = [5]int{90, 80, 70, 80, 97}
+     fmt.Println(grades)  
+     grades[1] = 100
+     fmt.Println(grades)
+}     
+>>> go run main.go
+[90 80 70 80 97]
+[90 100 70 80 97] #we changed value of the 1st value to 100
+     
+ }
+ >>> go run main.go
