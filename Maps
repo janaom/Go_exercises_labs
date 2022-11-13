@@ -1,0 +1,140 @@
+#unordered collection of key/value pairs
+#implemented by hash tables
+#provide efficient add, get and delete operations
+
+syntax:var <map_name> map[<key_data_type>]<value_data_type>
+ex: var my_mp map[string]int
+
+package main
+import "fmt"
+func main() {
+     var codes map[string]string
+     codes["en"] = "English"
+     fmt.Println(codes)
+}
+>>> go run main.go
+panic: assigment to entry in nil map
+
+<map_name> := map[<key_data_type>]<value_data_type>{<key-value-pairs>}
+ex: codes := map[string]string{"en": "English", "fr": "French"}
+
+package main
+import "fmt"
+func main() {
+     codes := map[string]string{"en": "English", "fr": "French"}
+     fmt.Println(codes)
+}
+>>> go run main.go
+map[en:English fr:French]
+
+#make() function
+<map_name> := make(map[<key_data_type>]<value_data_type>,<initial_capacity>)
+
+package main
+import "fmt"
+func main() {
+     codes := make(map[string]int)
+     fmt.Println(codes)
+}
+>>> go run main.go
+map[]
+
+package main
+import "fmt"
+func main() {
+     codes := map[string]string{"en": "English", "fr": "French", "hi": "Hindi"}
+     fmt.Println(codes["en"])
+     fmt.Println(codes["fr"])
+     fmt.Println(codes["hi"])
+}
+>>> go run main.go
+English
+French
+Hindi
+
+#getting a key
+package main
+import "fmt"
+func main() {
+     codes := map[string]int{"en": 1, "fr": 2, "hi": 3}
+     value, found := codes["en"]
+     fmt.Println(found, value)
+     value, found = codes["hh"]
+     fmt.Println(found, value)
+ }
+ >>> go run main.go
+ true 1
+ false 0
+ 
+#adding key-value pair map[key]= value
+package main
+import "fmt"
+func main() {
+     codes := map[string]string{"en": "English", "fr": "French", "hi": "Hindi"}
+     codes["it"] = "Italian"
+     fmt.Println(codes)
+}
+>>> go run main.go
+map[en:English fr:French hi:Hindi it:Italian]
+
+
+#update key-value pair
+package main
+import "fmt"
+func main() {
+     codes := map[string]string{"en": "English", "fr": "French", "hi": "Hindi"}
+     codes["en"] = "English language"
+     fmt.Println(codes)
+}
+>>> go run main.go
+map[en:English language fr:French hi:Hindi]
+
+#delete key-value pair delete(map, key_name)
+package main
+import "fmt"
+func main() {
+     codes := map[string]string{"en": "English", "fr": "French", "hi": "Hindi"}
+     fmt.Println(codes)
+     delete(codes, "en")
+     fmt.Println(codes)
+}
+>>> go run main.go
+map[en:English fr:French hi:Hindi]
+map[fr:French hi:Hindi]
+
+#iterate over a map
+package main
+import "fmt"
+func main() {
+     codes := map[string]string{"en": "English", "fr": "French", "hi": "Hindi"}
+     for key, value := range codes {
+         fmt.Println(key, "=>", value)
+        }
+ }
+ >>> go run main.go
+ en => English
+ fr => French
+ hi => Hindi
+ 
+#truncate a map
+package main
+import "fmt"
+func main() {
+     codes := map[string]string{"en": "English", "fr": "French", "hi": "Hindi"}
+     for key, value := range codes {
+         delete(codes, key)
+        }
+        fmt.Println(codes)
+  }
+  >>> go run main.go
+  map[]
+  
+package main
+import "fmt"
+func main() {
+     codes := map[string]string{"en": "English", "fr": "French", "hi": "Hindi"}
+     codes = make(map[string]string)
+     fmt.Println(codes)
+  }
+  >>> go run main.go
+  map[] 
