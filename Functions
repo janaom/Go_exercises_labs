@@ -1,0 +1,118 @@
+Syntax:
+func <function_name>(<params>) <return type> {
+  // body of the function
+}
+
+Example:
+func addNumbers(a int, b int) int {
+  // body of the function
+}
+
+Example:
+func addNumbers(a int, b int) int {
+  sum := a + b
+  return sum
+}
+
+Example:
+func addNumbers(a int, b int) int {
+  sum := a + b
+  return sum
+}
+func main() {
+  sumOfNumbers := addNumbers(2, 3)
+  fmt.Print(sumOfNumbers)
+}
+
+
+package main
+import "fmt"
+func printGreeeting(str string) {
+     fmt.Println("Hey there, ", str)
+}
+func main() {
+     printGreeeting("Joe")
+}
+>>> go run main.go
+Hey there, Joe
+
+
+package main
+import "fmt"
+func operation(a int, b int) (int, int) {
+     sum := a + b
+     diff := a - b
+     return sum, diff
+}
+func main() {
+     sum, difference := operation(20, 10)
+     fmt.Println(sum, difference)
+}
+>>> go run main.go
+30  10
+
+
+package main
+import "fmt"
+func sumNumbers(numbers ...int) int {
+      sum := 0
+      for _, value := range numbers {
+          sum += value
+      }
+      return sum
+}
+func main() {
+     fmt.Println(sumNumbers())
+     fmt.Println(sumNumbers(10))
+     fmt.Println(sumNumbers(10, 20))
+     fmt.Println(sumNumbers(10, 20, 30, 40, 50))
+}
+>>> go run main.go
+0
+10
+30
+150
+
+
+package main
+import "fmt"
+func printDetails(student string, subjects ...string) {
+      fmt.Println("hey ", student, ", here are your subjects - ")
+      for _, sub := range subjects {
+           fmt.Printf("%s, ", sub)
+      }
+}
+
+func main() {
+     printDetails("Joe", "Physics", "Biology")
+}
+>>> go run main.go
+hey Joe , here are your subjects - 
+Physics, Biology,
+
+
+#blank identifier '_'
+package main
+import "fmt"
+func f() (int, int) {
+     return 42, 53
+}
+func main() {
+     a, b := f()
+     fmt.Println(a, b)
+}
+>>> go run main.go
+42  53
+
+
+package main
+import "fmt"
+func f() (int, int) {
+     return 42, 53
+}
+func main() {
+     v , _ := f()
+     fmt.Println(v)
+}
+>>> go run main.go
+42 
