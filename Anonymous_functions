@@ -1,0 +1,27 @@
+#function inside function
+
+package main
+imoprt "fmt"
+func main() {
+     x := func(1 int, b int) int {
+        return 1 * b
+     }
+     fmt.Printf("%T \n", x)
+     fmt.Println(x(20, 30))
+ }
+>>> go run main.go
+func(int, int) int
+600
+
+package main
+imoprt "fmt"
+func main() {
+     x := func(1 int, b int) int {
+        return 1 * b
+     } (20, 30)
+     fmt.Printf("%T \n", x)
+     fmt.Println(x)
+ }
+>>> go run main.go
+int
+600
