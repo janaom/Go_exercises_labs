@@ -1,0 +1,138 @@
+#address and dereference operators
+
+package main
+import "fmt"
+func main() {
+    i := 10
+    fmt.Prinrf("%T %v \n", &i, &i)
+    fmt.Prinrf("%T %v \n", *(&i), *(&i))
+}
+>>> go run main.go
+*int 0xc00018c008
+int 10
+
+
+#declaring a pointer
+syntax: var <pointer_name> *<data_type>
+ex: var ptr_i *int
+ex: var ptr_s *string
+
+package main
+import "fmt"
+func main() {
+     var i *int
+     var s *string
+     fmt.Println(i)
+     fmt.Println(s)
+ }
+ >>> go run main.go
+ <nil>
+ <nil> #zero value of the pointer is nil
+ 
+ 
+ #initializing a pointer
+ var <pointer_name> *<data_type> = &<variable_name>
+ var <pointer_name> = &<variable_name>
+ <pointer_name> := &<variable_name>
+ 
+package main
+import "fmt"
+func main() {
+      s := "hello"
+      var b *string = &s
+      fmt.Println(b)
+      var a = &s
+      fmt.Println(a)
+      c := &s
+      fmt.Println(c)
+  }
+  >>> go run main.go
+ 0xc000010230
+ 0xc000010230
+ 0xc000010230
+ 
+ 
+ #dereferencing a pointer
+ package main
+ import "fmt"
+ func main() {
+      s := "hello"
+      fmt.Printf("%T %v \n", s, s)
+      ps := &s
+      *ps = "world"
+      fmt.Printf("%T %v \n", s, s)
+ }
+>>> go run main.go
+string hello
+string world
+ 
+ 
+ #passing by value in functions
+ package main
+ import "fmt"
+ func modify(s string) {
+      s = "world"
+  }
+ func main() {
+      a := "hello"
+      fmt.Println(a)
+      modify(a)
+      fmt.Println(a)
+  }
+  >>> go run main.go
+  hello
+  hello
+  
+  
+ #passing by reference in functions
+ package main
+ import "fmt"
+ func modify(s *string) {
+      *s = "world"
+  }
+ func main() {
+      a := "hello"
+      fmt.Println(a)
+      modify(&a)
+      fmt.Println(a)
+  }
+  >>> go run main.go
+ hello
+ world
+ 
+ 
+ #slices are passed by reference, by default
+ package main
+ import "fmt"
+ func modify(s []int) {
+      s[0] = 100
+  }
+ func main() {
+      slice := []int{10, 20, 30}
+      fmt.Println(slice)
+      modify(slice)
+      fmt.Println(slice)
+  }
+  >>> go run main.go
+  [10 20 30]
+  [100 20 30]
+  
+  
+ #maps, as well, are passed by reference, by default
+ package main
+ import "fmt"
+ func modify(m map[string]int) {
+      m["K"] = 75
+  }
+ func main() {
+      ascii_codes := make(map[string]int)
+      ascii_codes["A"] = 65
+      ascii_codes["F"] = 70
+      fmt.Println(ascii_codes)
+      modify(ascii_codes)
+      fmt.Println(ascii_codes)
+  }
+  >>> go run main.go
+  map[A:65 F:70]
+  map[A:65 F:70 K:75]
+ 
