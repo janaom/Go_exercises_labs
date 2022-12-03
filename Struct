@@ -1,0 +1,212 @@
+type <struct_name> struct {
+  //list of fields
+}
+
+type Circle struct {
+  x float64
+  y float64
+  r float64
+}
+
+type Student struct {
+  name string
+  rollNo int
+  marks []int
+  grades map[string]int
+}
+
+
+package main
+import "fmt"
+type Student struct {
+      name string
+      rollNo int
+      marks []int
+      grades map[string]int
+  }
+ func main() {
+      var s Student
+      fmt.Printf("%+v", s)
+  }
+  >>> go run main.go
+  {name: rollNo:0 marks:[] grades:map[]}
+  
+  
+package main
+import "fmt"
+type Student struct {
+      name string
+      rollNo int
+      marks []int
+      grades map[string]int
+  }
+ func main() {
+      st := new(Student)  #st is a pointer of type Student
+      fmt.Printf("%+v", s)
+  }
+  >>> go run main.go
+  &{name: rollNo:0 marks:[] grades:map[]}
+  
+  
+package main
+import "fmt"
+type Student struct {
+      name string
+      rollNo int
+  }
+ func main() {
+      st := Student{  #st is a pointer of type Student
+           name: "Joe",
+           rollNo: 12,
+       }
+      fmt.Printf("%+v", s)
+  }
+  >>> go run main.go
+  {name:Joe rollNo:12}  
+  
+  
+package main
+import "fmt"
+type Student struct {
+      name string
+      rollNo int
+  }
+ func main() {
+      st := Student{"Joe", 12}  #st is a pointer of type Student
+      fmt.Printf("%+v", s)
+  }
+  >>> go run main.go
+  {name:Joe rollNo:12}  
+  
+  
+package main
+import "fmt"
+type Circle struct {
+      x int
+      y int
+      radius int
+  }
+ func main() {
+      var c Circle
+      c.x = 5
+      c.y = 5
+      c.radius = 5
+      fmt.Printf("%+v \n", c)
+  }
+  >>> go run main.go
+  {x:5 y:5 radius:5}   
+  
+  
+package main
+import "fmt"
+type Circle struct {
+      x int
+      y int
+      radius float64
+      area float64
+  }
+ func calArea(c *Circle) {
+      const PI float64 = 3.14
+      var area float64
+      area = (PI * c.radius * c.radius)
+      (*c).area = area
+  }  
+ func main() {
+      c := Circle{x: 5, y: 5, radius: 5, area: 0}
+      fmt.Printf("%+v \n", c)
+      calcArea(&c)
+      fmt.Printf("%+v \n", c)
+  }
+  >>> go run main.go
+  {x:5 y:5 radius:5 area:0} 
+  {x:5 y:5 radius:5 area:78.5} 
+  
+  
+  #comparing structs
+  package main
+  import "fmt"
+  type s1 struct {
+      x int
+   }
+  func main() {
+      c := s1{x: 5}
+      c1 := s1{x: 6}
+      c2 := s1{x: 5}
+      if c != c1 {
+          fmt.Println("c and c1 have different values")
+       }
+       if c == c2 {
+          fmt.Println("c is same as c2")
+}
+}
+>>> go run main.go
+c and c1 have different values
+c is same as c2
+
+
+#methods
+package main
+import "fmt"
+type Circle struct {
+    radius float64
+    area float64
+}
+func (c *Circle) calcArea() {
+      c.area = 3.14 * c.radius * c.radius
+ }
+func main() {
+      c := Circle{radius: 5}
+      c.calcArea()
+      fmt.Printf("%+v", c)
+ }
+>>> go run main.go
+{radius:5 area:78.5}
+
+
+package main
+import "fmt"
+type Circle struct {
+    radius float64
+    area float64
+}
+func (c Circle) calcArea() {
+      c.area = 3.14 * c.radius * c.radius
+ }
+func main() {
+      c := Circle{radius: 5}
+      c.calcArea()
+      fmt.Printf("%+v", c)
+ }
+>>> go run main.go
+{radius:5 area:0}
+
+
+#method sets
+package main
+import "fmt"
+type Student struct {
+      name string
+      grades []int  #slice
+}
+func (s *Student) displayName() {
+    fmt.Println(s.name)
+}
+func (s *Stundet) calculatePercentage() float64 {
+      sum := 0
+      for _, v := range s.grades {
+          sum += v
+        }
+        return float64(sum*100) / float64(len(s.grades)*100)
+ }
+ func main() {
+    s := Student{name: "Joe", grades: []int{90, 75, 80}}
+    s.displayName()
+    fmt.Printf("%.2f%%", s.calculatePercentage())
+ }
+ >>> go run main.go
+ Joe
+ 81.67%
+ 
+ 
+
+ 
